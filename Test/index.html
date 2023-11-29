@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Carousel</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 56px; /* Adjust the padding based on the navbar height */
+        }
+
+        /* Custom styles for the carousel */
+        .carousel-item {
+            height: 100vh;
+            min-height: 300px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #87CEEB, #6495ED); /* Adjust the gradient colors */
+        }
+
+        /* Adjust styles for content in the left part */
+        .carousel-content-left {
+            color: #fff; /* Text color */
+            text-align: left;
+            padding: 0 20px; /* Adjust padding as needed */
+            max-width: 50%; /* Adjust the maximum width of the left content */
+        }
+
+        .carousel-content-left h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        /* Adjust styles for the image in the right part */
+        .carousel-content-right {
+            max-width: 50%; /* Adjust the maximum width of the right content */
+        }
+
+        .carousel-content-right img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Prevents image bottom margin issue */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Bootstrap Carousel -->
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <div class="carousel-content-left">
+                <h1>Your Heading</h1>
+                <p>Your text goes here.</p>
+                <button class="btn btn-light">Learn More</button>
+            </div>
+            <div class="carousel-content-right">
+                <img src="path/to/your/image.jpg" class="d-block w-100" alt="Image">
+            </div>
+        </div>
+        <!-- Add more carousel items as needed -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.2/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
