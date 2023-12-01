@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+<h2 class="text-center m-5 text-success">Food Categories</h2>
+<div class="row">
+  {% for category in data.categories %}
+  <div class="col-md-4 mb-4">
+    <div class="card text-success">
+      <img
+        src="{{ category.strCategoryThumb }}"
+        class="card-img-top"
+        alt="{{ category.strCategory }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ category.strCategory }}</h5>
+        <h6 class="card-title">Id: {{ category.idCategory }}</h6>
+        <p class="card-text">
+          {{ category.strCategoryDescription|truncatewords:10 }}
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

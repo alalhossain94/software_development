@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container text-center">
+  <div class="row m-5 justify-content-center align-items-center">
+    <div class="col">
+      <h2>Hi, I am Alal Hossain</h2>
+      <h5>I am the CEO of this Restaurant.</h5>
+      <p class="text-success">
+        Here you can enjoy so many delicious food items like beef, chicken,
+        dessert, lamb, pasta, miscellaneous. Enjoy you food!
+      </p>
+    </div>
+    <div class="col">
+      <img
+        src="{% static 'images/my-image.png' %}"
+        alt="my Image"
+        class="img-fluid"
+      />
+    </div>
+  </div>
+  {% endblock %}
+</div>
