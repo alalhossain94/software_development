@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}HomePage{% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container" style="width: 50%; margin: auto">
+    {% csrf_token %}
+    <h1 class="m-5" style="color:#6AB547">Click on Your Choice!</h1>
+    <div class="m-5" style="font-size:22px; color:#EE7B30; font-weight:500">
+        <p>>>> Click on ShowTasks to see all the tasks.</p>
+        <p>>>> Click on AddTask to add new task.</p>
+        <p>>>> Click on AddCategory to add new category.</p>
+    </div>
+   
+</div>
+{% endblock %}
