@@ -22,28 +22,27 @@ def register(request):
         register_form = forms.RegistrationForm()
     return render(request, 'register.html', {'form' : register_form, 'type' : 'Register'})
 
-def user_login(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, request.POST)
-        if form.is_valid():
-            user_name = form.cleaned_data['username']
-            user_pass = form.cleaned_data['password']
-            user = authenticate(username=user_name, password=user_pass)
-            if user is not None:
-                messages.success(request, 'Logged in Successfully')
-                login(request, user)
-                return redirect('profile')
-            else:
-                messages.warning(request, 'Login informtion incorrect')
-                return redirect('register')
-    else:
-        form = AuthenticationForm()
-        return render(request, 'register.html', {'form' : form, 'type' : 'Login'})
+# def user_login(request):
+#     if request.method == 'POST':
+#         form = AuthenticationForm(request, request.POST)
+#         if form.is_valid():
+#             user_name = form.cleaned_data['username']
+#             user_pass = form.cleaned_data['password']
+#             user = authenticate(username=user_name, password=user_pass)
+#             if user is not None:
+#                 messages.success(request, 'Logged in Successfully')
+#                 login(request, user)
+#                 return redirect('profile')
+#             else:
+#                 messages.warning(request, 'Login informtion incorrect')
+#                 return redirect('register')
+#     else:
+#         form = AuthenticationForm()
+#         return render(request, 'register.html', {'form' : form, 'type' : 'Login'})
 
 
 class UserLoginView(LoginView):
     template_name = 'register.html'
-    # success_url = reverse_lazy('profile')
     def get_success_url(self):
         return reverse_lazy('profile')
     def form_valid(self, form):
@@ -59,12 +58,6 @@ class UserLoginView(LoginView):
         context['type'] = 'Login'
         return context
 
-    
-
-# @login_required
-# def profile(request):
-#     data =Car.objects.filter(user_panel = request.user)
-#     return render(request, 'profile.html', {'data' : data})
 
 @method_decorator(login_required, name= 'dispatch')
 class ProfileView(View):
