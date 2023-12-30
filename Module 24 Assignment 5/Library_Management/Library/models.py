@@ -12,7 +12,7 @@ class Category(models.Model):
 
 # =====================================Book Model=========================================#
 class BookModel(models.Model):
-    image = models.ImageField(upload_to='car/uploads/', blank=True, null=True)
+    image = models.ImageField(upload_to='book/uploads/', blank=True, null=True)
     title = models.CharField(max_length=100)
     description = models.TextField()
     borrowing_price = models.CharField(max_length=15)
